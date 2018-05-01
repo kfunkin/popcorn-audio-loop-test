@@ -9,24 +9,35 @@
     <link href="mui-colors.css" rel="stylesheet" type="text/css" />
     <script src="mui.min.js"></script>
     <script src="jquery-3.3.1.js"></script>
-    <script src="script.js"></script>
     <script src="popcorn.js"></script>
+    <script src="sound.js"></script>
+    <!--<script src="sound2.js"></script>-->
 
 
   </head>
 <body>
-  <Audio id="drums">
-       <source src="assets/WeFunk-Drum-Loop.mp3">
-  </Audio>
-  </div>
 
-  <script>
-  // create our instance of popcorn
-  var popcorn = Popcorn( "#drums" );
 
-  popcorn.loop( true );
-  popcorn.play();
+<div class="btns">
+<Audio id="drums" src="assets/DrumLoop.ogg" preload="auto"></audio>
+    <button class="mui-btn mui-btn--primary" onclick="togglePlay()"><div class="mui--text-button">drums</div></button>
 
-  </script>
+<Audio id="synth" src="assets/SynthLoop.ogg" preload="auto"></audio>
+    <button class="mui-btn mui-btn--primary" onclick="togglePlay()"><div class="mui--text-button">synth</div></button>
+
+</div>
+
 </body>
+
+<script>
+  // create our instance of popcorn
+var popcorn = Popcorn("#synth");
+popcorn.loop( true );
+
+var popcorn = Popcorn("#drums");
+popcorn.loop( true );
+  //popcorn.play();
+
+
+</script>
 </html>
